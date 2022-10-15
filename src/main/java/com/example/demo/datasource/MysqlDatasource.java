@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
-public class PostgresDatasource {
+public class MysqlDatasource {
 
     @Bean
     @ConfigurationProperties("app.datasource")
