@@ -5,6 +5,7 @@ import com.example.demo.model.Person;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 
 import org.springframework.stereotype.Repository;
 
@@ -14,7 +15,9 @@ public class FakePersonDataAccessService implements PersonDao {
     private static List<Person> DB = new ArrayList<>();
 
     @Override
-    public int insertPerson(int id, Person person) {
+    public int insertPerson(Person person) {
+        Random rand = new Random();
+        int id = rand.nextInt(100) + 1;
         DB.add(new Person(id, person.getName()));
         return 1;
     }
