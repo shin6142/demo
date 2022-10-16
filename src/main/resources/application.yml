@@ -4,7 +4,6 @@ app:
    username: test_user
    password: password
    pool-size: 30
-spring:
-  flyway:
+flyway:
+    enable: true
     baseline-on-migrate: true
-

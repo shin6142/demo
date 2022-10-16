@@ -1,0 +1,1 @@
+CREATE TABLE person (id int NOT NULL UNIQUE AUTO_INCREMENT, name varchar(100) NOT NULL, PRIMARY KEY (id));

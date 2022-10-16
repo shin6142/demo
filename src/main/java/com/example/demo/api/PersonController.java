@@ -1,6 +1,5 @@
 package com.example.demo.api;
 import java.util.List;
-import java.util.UUID;
 
 import javax.validation.Valid;
 
@@ -41,17 +40,17 @@ public class PersonController {
     }
 
     @GetMapping(path = "{id}")
-    public Person getPersonById(@PathVariable("id") UUID id) {
+    public Person getPersonById(@PathVariable("id") int id) {
         return personService.getPersonById(id).orElse(null);
     }
 
     @DeleteMapping(path = "{id}")
-    public void deletePersonById(@PathVariable("id") UUID id) {
+    public void deletePersonById(@PathVariable("id") int id) {
         personService.deletePerson(id);
     }
     
     @PutMapping(path = "{id}")
-    public void updatePerson(@PathVariable("id") UUID id, @Valid @NonNull @RequestBody Person personToUpDate) {
+    public void updatePerson(@PathVariable("id") int id, @Valid @NonNull @RequestBody Person personToUpDate) {
         personService.updatePerson(id, personToUpDate);
     }
 }

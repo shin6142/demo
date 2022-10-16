@@ -5,7 +5,6 @@ import com.example.demo.model.Person;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -30,15 +29,15 @@ public class PersonService {
         return personDao.selectAllPeople();
     }
 
-    public Optional<Person> getPersonById(UUID id) {
+    public Optional<Person> getPersonById(int id) {
         return personDao.selectPersonById(id);
     }
 
-    public int deletePerson(UUID id) {
+    public int deletePerson(int id) {
         return personDao.deletePersonById(id);
     }
     
-    public int updatePerson(UUID id, Person newPerson) {
+    public int updatePerson(int id, Person newPerson) {
         return personDao.updatePersonById(id, newPerson);
     }
 }

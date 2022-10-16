@@ -3,23 +3,25 @@ import com.example.demo.model.Person;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
+import java.util.Random;
+
 
 public interface PersonDao {
 
-    int insertPerson(UUID id, Person person);
+    int insertPerson(int id, Person person);
     
     default int insertPerson(Person person) {
-        UUID id = UUID.randomUUID();
+        Random rand = new Random();
+        int id = rand.nextInt(100) + 1;
         return insertPerson(id, person);
     }
 
     List<Person> selectAllPeople();
 
-    Optional<Person> selectPersonById(UUID id);
+    Optional<Person> selectPersonById(int id);
 
-    int deletePersonById(UUID id);
+    int deletePersonById(int id);
     
-    int updatePersonById(UUID id, Person person);
+    int updatePersonById(int id, Person person);
 
 }
